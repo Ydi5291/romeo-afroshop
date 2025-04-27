@@ -46,28 +46,28 @@ body {
   @keyframes cinematicHeader {
     0% {
       background-size: 100%;
-      background-position: center;
-      opacity: 1;
+      background-position: left;
+      opacity: 1.5;
     }
     25% {
-      background-size: 105%;
+      background-size: 110%;
       background-position: top center;
       opacity: 0.95;
     }
     50% {
-      background-size: 110%;
+      background-size: 115%;
       background-position: center;
       opacity: 1;
     }
     75% {
-      background-size: 105%;
+      background-size: 115%;
       background-position: bottom center;
       opacity: 0.95;
     }
     100% {
       background-size: 100%;
-      background-position: center;
-      opacity: 1;
+      background-position: right;
+      opacity: 2;
     }
   }
   
@@ -134,7 +134,7 @@ body {
     z-index: 4;
   }
   .burger:hover{
-    color: #f9f9f9;
+    color: hsl(135, 82%, 45%);
   }
   /* ======== Sections Générales ======== */
   section {
@@ -203,9 +203,14 @@ body {
 }
 
 .prev-btn:hover,
-.next-btn:hover,
-.close-overlay:hover {
-    background: rgba(255, 255, 255, 1);
+.next-btn:hover  {  
+  background: rgb(17, 182, 110);
+}
+.prev-btn:hover  {  
+  background: #ffff00;
+}
+.close-btn:hover {
+  background: rgba(255, 50, 50, 0.8);
 }
 
 .prev-btn {
@@ -220,7 +225,7 @@ body {
     transform: translateY(-50%);
 }
 
-.close-overlay {
+.close-btn {
     top: 10px;
     right: 10px;
     background: rgba(255, 50, 50, 0.8);
@@ -244,7 +249,7 @@ body {
 }
 @keyframes zoom {
   0%, 100% {
-    transform: scale(1);
+    transform: scale(0.8);
   }
   50% {
     transform: scale(1.1);
@@ -255,10 +260,8 @@ body {
   max-width: 80%;
   max-height: 80%;
   margin-bottom: 20px;
-  animation: zoom 3s infinite ease-in-out; /* Zoom toutes les 3 secondes */
+  animation: zoom 8s infinite ease-in-out; /* Zoom toutes les 3 secondes */
 }
-
-
 
 .full-overlay button {
   background: white;
@@ -384,7 +387,7 @@ body {
       color: #000;
       font-size: 1.6em;
       padding: 0 70px ;
-      box-shadow:2px 0 4px 0 rgba(0, 0, 0, 0.7);
+      box-shadow:2px 0 4px 0 rgba(0, 0, 0, 0.3);
     }
   
     h2 {
