@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
     { image: "img/Früchte/Standort1.jpg", title: "Standort" },
     { image: "img/Früchte/Standort2.jpg", title: "Standort" },
     { image: "img/Früchte/Cosmetic.jpg", title: "Kosmetic" },
-    { image: "img/Früchte/Alloco2.jpg", title: "kochbanane" },
-    { image: "img/Früchte/Alloco1.jpg", title: "kochbanane" },
+    { image: "img/Früchte/Alloco2.jpg", title: "Kochbanane" },
+    { image: "img/Früchte/Alloco1.jpg", title: "Kochbanane" },
     { image: "img/Früchte/Schill.jpg", title: "Chili" },
     { image: "img/Früchte/Ignam.jpg", title: "Gemüse" },
     { image: "img/Früchte/Chips.jpg", title: "Chips" },
@@ -59,15 +59,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeBtn = fullOverlay.querySelector(".close-btn");
 
   let currentIndex = 0;
+  let autoSlideInterval; // Pour l'intervalle automatique
 
   function openOverlay(index) {
     currentIndex = index;
     fullImage.src = products[currentIndex].image;
     fullOverlay.style.display = "flex";
+    startAutoSlide(); // démarre le slider auto quand l'overlay est ouvert
   }
 
   function closeOverlay() {
     fullOverlay.style.display = "none";
+    stopAutoSlide(); // arrête le slider auto quand l'overlay est fermé
   }
 
   function showNext() {
@@ -78,6 +81,15 @@ document.addEventListener("DOMContentLoaded", function () {
   function showPrev() {
     currentIndex = (currentIndex - 1 + products.length) % products.length;
     fullImage.src = products[currentIndex].image;
+  }
+
+  function startAutoSlide() {
+    stopAutoSlide(); // évite les doublons
+    autoSlideInterval = setInterval(showNext, 3000); // toutes les 3 secondes
+  }
+
+  function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
   }
 
   // Event listeners
@@ -91,6 +103,13 @@ document.addEventListener("DOMContentLoaded", function () {
   nextBtn.addEventListener("click", showNext);
   prevBtn.addEventListener("click", showPrev);
   closeBtn.addEventListener("click", closeOverlay);
+
+  // Stop slider quand on clique sur "close" (sécurité supplémentaire)
+  fullOverlay.addEventListener("click", function (event) {
+    if (event.target === fullOverlay) {
+      closeOverlay();
+    }
+  });
 });
 
 
