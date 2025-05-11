@@ -1,245 +1,291 @@
 /* ======== Base ======== */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background-color: #fff;
-    color: #333;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #222;
+  font-size: 2rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+h2,
+h3 {
+  font-size: 34px;
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* ======== Header ======== */
+header {
+  background-image: url('./img/Früchte/Ware.jpg');
+  color: #000;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  animation: cinematicHeader 20s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* centre verticalement le contenu */
+  align-items: center;
+  /* centre horizontalement */
+  padding-top: 60px;
+  /* laisse de la place pour le logo */
   
-  h1 {
-    text-align: center;
-    margin-bottom: 10px;
-    color: #222;
-    font-size: 2rem;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+}
+
+/* Keyframes combo: zoom + déplacement + opacité */
+@keyframes cinematicHeader {
+  0% {
+    background-size: 100%;
+    background-position: center;
+    opacity: 1;
   }
-  
-  h2, h3 {
+
+  25% {
+    background-size: 105%;
+    background-position: top center;
+    opacity: 0.95;
+  }
+
+  50% {
+    background-size: 110%;
+    background-position: center;
+    opacity: 1;
+  }
+
+  75% {
+    background-size: 105%;
+    background-position: bottom center;
+    opacity: 0.95;
+  }
+
+  100% {
+    background-size: 100%;
+    background-position: center;
+    opacity: 1;
+  }
+}
+
+
+/* ======== Navigation ======== */
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  color: black;
+  z-index: 2;
+}
+
+nav {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Centrer horizontalement */
+  width: auto;
+  z-index: 3;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: rgb(28, 194, 108);
+  transform: scale(1.1);
+}
+
+/* ======== Logo et Burger ======== */
+.logo {
+  height: 100px;
+  border-radius: 10px;
+  position: absolute;
+  left: 30px;
+  top: 30px;
+}
+
+.burger {
+  font-size: 2em;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: black;
+  display: none;
+  z-index: 4;
+}
+
+.burger:hover {
+  color: hsl(135, 82%, 45%);
+}
+
+/* ======== Sections Générales ======== */
+section {
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* ======== ID-Home  ======== */
+.space {
+  height: 100px;
+  margin-bottom: 20px;
+  h2{
+    padding: 50px;
+    color: #000;
     font-size: 34px;
   }
-  
-  p {
-    line-height: 1.7;
-    margin-bottom: 15px;
-  }
-  
-  /* ======== Header ======== */
-  header {
-    background-image: url('./img/Früchte/Ware.jpg');
-    color: #000;
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-    animation: cinematicHeader 20s ease-in-out infinite;
-    position: relative;
-    z-index: 1;
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* centre verticalement le contenu */
-    align-items: center; /* centre horizontalement */
-    padding-top: 60px; /* laisse de la place pour le logo */
-  }
-  
-  @keyframes cinematicHeader {
-    0% {
-      background-size: 100%;
-      background-position: left;
-      opacity: 1.5;
-    }
-    25% {
-      background-size: 110%;
-      background-position: top center;
-      opacity: 0.95;
-    }
-    50% {
-      background-size: 115%;
-      background-position: center;
-      opacity: 1;
-    }
-    75% {
-      background-size: 115%;
-      background-position: bottom center;
-      opacity: 0.95;
-    }
-    100% {
-      background-size: 100%;
-      background-position: right;
-      opacity: 2;
-    }
-  }
-  
-  /* ======== Navigation ======== */
+}
 
-  h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    color: white;
-    z-index: 2;
+#home {
+  background-image: url('img/Früchte/Standort1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 1200px;
+  h2{
+    padding: 100px;
+    color: #000;
+    font-size: 24px;
   }
-  
-  nav {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%); /* Centrer horizontalement */
-    width: auto;
-    z-index: 3;
+  p{
+    color: hsl(223, 15%, 9%);
   }
-  
-  nav ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 14px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s ease-in-out;
-  }
-  
-  nav a:hover {
-    color: rgb(28, 194, 108);
-    transform: scale(1.1);
-  }
-  
-  /* ======== Logo et Burger ======== */
-  .logo {
-    height: 100px;
-    border-radius: 10px;
-    position: absolute;
-    left: 30px;
-    top: 30px;
-  }
-  
-  .burger {
-    font-size: 2em;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: black;
-    display: none;
-    z-index: 4;
-  }
-  .burger:hover{
-    color: hsl(135, 82%, 45%);
-  }
-  /* ======== Sections Générales ======== */
-  section {
-    padding: 40px;
-    max-width: 800px;
-    margin: auto;
-  }
-  
-  /* ======== Produits ======== */
- 
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+}
+
+/* ======== Produits ======== */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .product-card {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .product-image-container {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .product-image {
-    width: 100%;
-    height: auto;
-    transition: opacity 0.5s ease-in-out;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .product-image-container:hover .overlay {
-    opacity: 1;
+  opacity: 1;
 }
 
 .prev-btn,
 .next-btn,
 .close-overlay {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
-    padding: 8px 12px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: 0.3s;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 8px 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.3s;
 }
 
 .prev-btn:hover,
-.next-btn:hover  {  
+.next-btn:hover {
   background: rgb(17, 182, 110);
 }
-.prev-btn:hover  {  
+
+.prev-btn:hover {
   background: #ffff00;
 }
+
 .close-btn:hover {
   background: rgba(255, 50, 50, 0.8);
 }
 
 .prev-btn {
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .next-btn {
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .close-btn {
-    top: 10px;
-    right: 10px;
-    background: rgba(255, 50, 50, 0.8);
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 50, 50, 0.8);
 }
 
 .overlay-text {
-    color: white;
-    font-size: 1.5rem;
-    margin-top: 20px;
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 20px;
 }
 
 .full-overlay {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
@@ -247,10 +293,14 @@ body {
   flex-direction: column;
   z-index: 1000;
 }
+
 @keyframes zoom {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(0.8);
   }
+
   50% {
     transform: scale(1.1);
   }
@@ -260,7 +310,8 @@ body {
   max-width: 80%;
   max-height: 80%;
   margin-bottom: 20px;
-  animation: zoom 8s infinite ease-in-out; /* Zoom toutes les 3 secondes */
+  animation: zoom 8s infinite ease-in-out;
+  /* Zoom toutes les 3 secondes */
 }
 
 .full-overlay button {
@@ -273,151 +324,189 @@ body {
   border-radius: 8px;
 }
 
-  
-  /* ======== Footer ======== */
-  footer {
-    background-color: #2d2d2d;
-    color: #fff;
-    text-align: center;
+
+/* ======== Footer ======== */
+footer {
+  background-color: #2d2d2d;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-logo {
+  height: 100px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ======== Google Maps & Form ======== */
+.map-container {
+  margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.maps-link {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.maps-link a {
+  display: inline-block;
+  background-color: #2d2d2d;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.maps-link a:hover {
+  background-color: #444;
+}
+
+#kontaktformular {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  border-top: 2px solid #ddd;
+}
+
+/* ======== Impressum ======== */
+.impressum-content {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+.impressum-container {
+  max-width: 800px;
+  margin: 60px auto;
+  background-color: #a09b9b;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ======== Responsive ======== */
+@media (max-width: 768px) {
+
+  body,
+  section {
     padding: 20px;
   }
-  
-  .footer-logo {
-    height: 100px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+
+  .logo {
+    height: 60px;
   }
-  
-  
-  /* ======== Google Maps & Form ======== */
-  .map-container {
-    margin-top: 15px;
+
+  header {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: none;
   }
-  
-  .maps-link {
-    text-align: center;
-    margin-top: 10px;
+
+  nav ul.show {
+    display: flex;
   }
-  
-  .maps-link a {
-    display: inline-block;
-    background-color: #2d2d2d;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+
+  .burger {
+    display: block;
+    text-align: left;
+    top: 50px;
   }
-  
-  .maps-link a:hover {
-    background-color: #444;
+
+  h1 {
+    color: #000;
+    font-size: 1.6em;
+    padding: 0 70px;
+    box-shadow: 2px 0 4px 0 rgba(0, 0, 0, 0.3);
   }
-  
-  #kontaktformular {
-    padding: 40px 20px;
-    background-color: #f9f9f9;
-    border-top: 2px solid #ddd;
+
+  h2 {
+    font-size: 1.3em;
   }
-  
-  /* ======== Impressum ======== */
-  .impressum-content {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #fff;
-    color: #333;
+
+  h3 {
+    font-size: 1.1em;
   }
-  
+
+  footer {
+    padding: 15px;
+    font-size: 0.9em;
+  }
+
+  .footer-logo {
+    height: 60px;
+  }
+
+  .product-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 90%;
+  }
+
   .impressum-container {
-    max-width: 800px;
-    margin: 60px auto;
-    background-color: #a09b9b;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
   }
-  
-  a {
-    color: #0077cc;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  /* ======== Responsive ======== */
-  @media (max-width: 768px) {
-    body, section {
-      padding: 20px;
-    }
-    .logo {
-      height: 60px;
-    }
-    header {
-      padding: 15px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-    }
-  
-    nav ul {
-      flex-direction: column;
-      gap: 10px;
-      padding: 10px;
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 10px;
-      display: none;
-    }
-  
-    nav ul.show {
-      display: flex;
-    }
-  
-    .burger {
-      display: block;
-      text-align: left;
-      top: 50px;
-    }
-  
-    h1 {
-      color: #000;
-      font-size: 1.6em;
-      padding: 0 70px ;
-      box-shadow:2px 0 4px 0 rgba(0, 0, 0, 0.3);
-    }
-  
-    h2 {
-      font-size: 1.3em;
-    }
-  
-    h3 {
-      font-size: 1.1em;
-    }
-  
-    footer {
-      padding: 15px;
-      font-size: 0.9em;
-    }
-    .footer-logo {
-      height: 60px;
-    }
-    .product-grid {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .product-card {
-      width: 90%;
-    }
-  
-    .impressum-container {
-      padding: 20px;
-      margin: 20px;
-    }
-  }
-  
-  
+}
+
+.cart-container {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-dropdown button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.bestellen-whatsapp {
+  text-align: center;
+  margin: 40px auto;
+}
+
+.whatsapp-button {
+  background-color: #25D366;
+  color: white;
+  padding: 14px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5d;
+}

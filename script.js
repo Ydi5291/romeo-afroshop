@@ -5,10 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
     menu.classList.toggle('show');
   };
 
+
   // Liste des produits
   const products = [
-    { image: "img/Früchte/Standort1.jpg", title: "Standort" },
-    { image: "img/Früchte/Standort2.jpg", title: "Standort" },
+    // { image: "img/Früchte/Standort1.jpg", title: "Standort" },
+    // { image: "img/Früchte/Standort2.jpg", title: "Standort" },
     { image: "img/Früchte/Cosmetic.jpg", title: "Kosmetic" },
     { image: "img/Früchte/Alloco2.jpg", title: "Kochbanane" },
     { image: "img/Früchte/Alloco1.jpg", title: "Kochbanane" },
@@ -85,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function startAutoSlide() {
     stopAutoSlide(); // évite les doublons
-    autoSlideInterval = setInterval(showNext, 3000); // toutes les 3 secondes
+    autoSlideInterval = setInterval(showNext, 10000); // toutes les 10 secondes
   }
 
   function stopAutoSlide() {
@@ -115,4 +116,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  
+
